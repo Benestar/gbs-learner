@@ -1,13 +1,23 @@
-\documentclass{report}
-\usepackage[inner=4cm,outer=2cm]{geometry} %left=4cm,right=2cm would be equivalent
+\documentclass[a4paper]{report}
+\usepackage[german]{babel}
 
-\usepackage[ngerman]{babel}
-\usepackage{geometry}
+\renewcommand{\sfdefault}{lmss}
+
+\special{papersize=\the\paperwidth,\the\paperheight}
+
+\usepackage{lipsum}
 \usepackage{marginnote}
+\usepackage[top=2cm, 
+			bottom=2cm, 
+			outer=5cm, 
+			inner=2.5cm, 
+			heightrounded, 
+			marginparwidth=2.5cm, 
+			marginparsep=1.3cm]{geometry}
+
+%\renewcommand{\marginnote}[1]{\marginnote{\textbf{#1}}} TODO: fix this to avoid having to type textbf every time
 
 \begin{document}
-	
-	
-\include{kapitel/Kap1}
+	\include{kapitel/Kap1}
 \end{document}
 
