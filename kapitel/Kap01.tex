@@ -1,17 +1,5 @@
-\chapter{Einfuehrung}
+\section{Einfuehrung}
 
-\section{Grundlegende Begriffe}
-
-\marginnote{Was ist ein Rechensystem?}
-\begin{itemize}
-	\item \emph{offen} Komponenten, Abhängigkeiten und Schnittstellen
-	\item \emph{dynamisch} Veränderung des Zustandes über der Zeit
-	\item \emph{technisch} Hardware und Software
-\end{itemize}
-
-
-\section{Betriebssystem: Begriffsklärung}
-\section{Einführung}
 \subsection{Grundlegende Begriffe}
 \fatmarginnote{Definition: Rechner\-system}
 Sie sind offene, dynamische, technische Systeme mit der Fähigkeit zur Speicherung und Verarbeitung von Informationen, sowie der Fähigkeit zur Kommunikation.
@@ -130,12 +118,12 @@ Zusätzliche Isolation innerhalb des BS führt zu stärkerer Isolation von Anwen
 \fatmarginnote{Definition: Maschinenschnittstelle, ISA}
 ISA (Instruction Set Architecture) ist die Menge der Maschinenbefehle (Befehlssatz des Prozessors). Unterscheidung zwischen RISC und CISC-Architekturen. Intel gehört zu CISC Architektur
 
-\subsubsection{Assembler}
+\subsection{Assembler}
 Maschinennahe, konkrete Programmiersprache. Vereinfachung der Nutzung der ISA durch Verwendung von Namen und symb. Adressen. 
 \fatmarginnote{Aufgaben eines Assemblers}
 Transformation von Assemblerbefehlen in Maschinenbefehle, Zuweisung von symbolischen Namen zu Maschinenadressen, Erzeugen eines \fatcapitals{Objektprogramms}. Ein Assembler arbeitet nur auf einer Compile-Unit. 
 
-\subsubsection{Linker (Binder) und Loader}
+\subsection{Linker (Binder) und Loader}
 Was passiert wenn ein Programm aus mehreren Modulen besteht?
 \fatmarginnote{Differenziere die Begriffe Linker und Loader}
 Linker fasst die einzelnen Lade-Objekte (\fatcapitals{Kompilate}) einzelner Compile-units in einer gemeinsamen \textsc{Objektdatei} zusammen. (Ein Assembler arbeitet nur auf einer einzelnen Compile-Unit.) 
