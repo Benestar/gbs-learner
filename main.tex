@@ -1,5 +1,7 @@
-\documentclass[a4paper]{report}
-\usepackage[german]{babel}
+\documentclass[a4paper]{article}
+\usepackage[english, german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 \renewcommand{\sfdefault}{lmss}
 
@@ -9,19 +11,33 @@
 \usepackage{lipsum}
 \usepackage{marginnote}
 \usepackage{tabularx}
-\reversemarginpar
 
-\usepackage[top=2cm, 
-			bottom=2cm, 
-			outer=2.5cm, 
-			inner=5cm, 
-			heightrounded, 
-			marginparwidth=3cm, 
-			marginparsep=1.2cm]{geometry}
+%\reversemarginpar
 
-%\renewcommand{\marginnote}[1]{\marginnote{\textbf{#1}}} TODO: fix this to avoid having to type textbf every time
+\usepackage[top=2cm, bottom=2cm, outer=6cm, inner=3cm, heightrounded, marginparwidth=3cm, marginparsep=1.2cm]{geometry}
+
+			
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+\newcommand{\fatmarginnote}[1]{\mbox{} 
+	\marginnote{\textbf{#1}}} 
+
+\newcommand{\fatcapitals}[1]{\textsc{\textbf{#1}}} 
 
 \begin{document}
+	\title{\textsc{GBS Learner}}
+	\date{}
+	\author{\textsc{Su Stefan}}
+	\maketitle
+	\tableofcontents
 	\include{kapitel/Kap1}
+	\include{kapitel/Kap2}
 \end{document}
 
