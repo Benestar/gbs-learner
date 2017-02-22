@@ -11,68 +11,144 @@
 
 
 \section{Betriebssystem: Begriffsklärung}
+\section{Einführung}
+\subsection{Grundlegende Begriffe}
+\fatmarginnote{Definition: Rechner\-system}
+Sie sind offene, dynamische, technische Systeme mit der Fähigkeit zur Speicherung und Verarbeitung von Informationen, sowie der Fähigkeit zur Kommunikation.
 
-\section{Betriebssysteme: Hauptaufgaben}
-\marginnote{Anlass?}
-\noindent Schutz des BS und der Hardware vor Fehlern und Angriffen
+\fatmarginnote{Definition: Offenes System} 
+Ein offenes System besteht aus Komponenten, Verbindungen zwischen diesen beschreiben Abhängigkeiten, besitzt Schnittstellen zur externen Einwirkung auf das System. 
 
-\marginnote{Welche Loesungsansaetze gibt es? Welche Klassifizierung in Arbeitsmodi resultiert?}
-\begin{longtable}{ll}
-	Benutzermodus (User Mode / Space)& Systemmodus (Kernel Mode / Space)\\
-	Kein direkter Hardware Zugriff moeglich& Privilegierter Modus\\ 
-\end{longtable}
+\fatmarginnote{Definition: Schnittstellen} 
+Schnittstellen ermöglichen verschiedene Sichten auf das System. Black-Box-Sicht auf Einheiten von au"sen durch Zusammenfassung von Komponenten / Abgrenzungen, White-Box-Sicht von innen, die durch rekurs. Aufteilung in Komponenten / Subkomponenten verfeinert werden.
+ 
+\fatmarginnote{Definition: Dynamisches System} verändert sich über die Zeit. Zu einem Betrachtungszeitpunkt: Eigenschaften beschreiben Zustand des Systems. Änderungen von Eigenschaften sind Zustands\-änderungen. System\-verhalten beschrieben durch Folge von Zuständen / Zustandsänderungen, ermöglicht durch aktive (Aktionsausführung) und passive Komponenten (Aktionsermöglichung).  
+
+\marginpar{Schichten\-struktur und Einordnung des Betriebs\-systems}
+\begin{itemize} 	\setlength\itemsep{0em}
+	\item Anwendungsprogramme
+	\item Systemprogramme (Shell, Compiler, Linker \& Loader etc.)
+	\item Betriebssystem
+	\item Hardware (Maschinensprache, Prozessor (CPU, GPU), Arbeisspeicher, I/O-Geräte)
+\end{itemize}
+
+\fatmarginnote{Definition: Prozess} 
+Ein Prozess (aktive Einheit) ist ein Programm (passive Einheit) in Ausführung, dabei sind mehrere Prozesse (Instanzen) möglich. Ein System besteht aus einer Menge von Prozessen. Dazu werden Prozesse benötigt (CPU, Speicher, Ein-/Ausgabegeräte, Dateien). Konzeptuell: Jeder Prozess besitzt seine eigene CPU. Ressourcenteilung der CPU wird durch BS realisiert - Prozessorverwaltungsaufgabe. Jeder Prozess besitzt einen eigenen Prozessadressraum - den virtueller Adressraum (Programmcode und Daten), diese sind voneinander abgeschottet.  
+
+\fatmarginnote{2 Klassen von Prozessen}
+Sequenzielle Prozesse mit einem Kontrollfluss und einem Befehlszähler, sequentielle Ausführung des Programms. Multi-Threaded Prozesse mit mehreren Kontrollflüssen mit je eigenem BZ, Registern und Stack. 
+
+\subsection{Betriebssysteme: Hauptaufgaben}
+\fatmarginnote{Zwei Hauptaufgaben}
+\begin{itemize} \setlength\itemsep{0em}
+	\item Abstraktion (Vereinfachung, sowie Bereitstellung von abstrakten Konzepten, z.B. Dateien)
+	\item Management (Steuerung und Kontrolle der Nutzung der physischen Ressourcen)
+\end{itemize}
+
+\fatmarginnote{Vier Typen von BS nach Art d. Hardware}
+\begin{enumerate} \setlength\itemsep{0em}
+	\item Server-BS
+	\item Server- und Desktop-BS
+	\item Mobile BS
+	\item Eingebettete BS
+\end{enumerate}
+
+\marginpar{Hauptaufgaben}
+\begin{enumerate} \setlength\itemsep{0em}
+	\item Abstraktion von tech. Details, Veredelung der HW (HW-Virtualisierung): Anbieten von Diensten und Schnittstellen
+	\item IPC
+	\item Steuerung \& Kontrolle der Programmausführung
+	\item Verwaltung von Ressourcen (Phasen, Treffen von strateg. Entscheidungen)
+\end{enumerate}
+
+\fatmarginnote{Klassifikation von Ressourcen}
+\begin{itemize} \setlength\itemsep{0em}
+	\item Anzahl der Nutzungen
+	\item Parallelität
+	\item Dauerhaftigkeit 
+	\item Zentrale / Periphere Ressourcen
+	\item aktive / passive Ressourcen, Hardware u. Software Ressourcen 
+\end{itemize}
+
+Schutz des BS und der Hardware vor Fehlern und Angriffen
+\fatmarginnote{Welche Lösungs\-ansaetze? Welche Klassifizierung in Arbeitsmodi?}
+Benutzermodus (user mode/space): Kein direkter Hardware Zugriff möglich, Zugriff nur auf virt. Adressen, Anwendungen/Benutzerprogramme \\ Systemmodus (kernel mode)/space: Privilegierter Modus/Befehle, alle Maschinenbefehle verfügb., BS-Kern läuft im kernel mode duh 
 
 
-\section{Systemprogrammierung}
 
-\marginnote{Definiere Systemprogrammierung!}
-\noindent Konstruktion von Algorithmen fuer ein Rechensystem, die die Bearbeitung und Ausfuehrung von Benutzerprogrammen unter Qualitaetskriterien organisieren (steuern, kontrollieren) und z.T. selbst ausfuehren.
+\subsection{Systemprogrammierung}
 
-\marginnote{Nenne die Qualitaetskritierien fuer die Systemprogrammierung!}
+\fatmarginnote{Definiere System\-programmierung!}
+\noindent Konstruktion von Algorithmen für ein Rechensystem, die die Bearbeitung und Ausführung von Benutzerprogrammen unter Qualitaetskriterien organisieren (steuern, kontrollieren) und z.T. selbst ausführen.
+
+\fatmarginnote{Nenne die Qualitaets\-kritierien für die System\-programmierung!}
 \begin{enumerate}
 	\setlength\itemsep{0em}
-	\item Zuverlaessigkeit
-	\item Effizienz und Performance
-	\item Realzeitanforderungen
-	\item Sicherheitsanforderungen
+	\item Zuverlässigkeit
+	\item Effizienz und Performance (optimale Auslastung, systemglobal; keine Ver\-zögerung v. Prozessen, auftragslokal)
+	\item Realzeitanforderungen (rechtzeitige Bearbeitung von zeitkrit. Aufträgen)
+	\item Sicherheitsanforderungen (Schutz d. Daten vor unberecht. Zugriffen und Weiter\-gaben)
 	\item Benutzerfreundlichkeit
 \end{enumerate}
 
-\marginnote{Welche Betriebsarten gibt es fuer BS?}
+\fatmarginnote{Welche Betriebsarten gibt es für BS?}
 \begin{enumerate}
 	\setlength\itemsep{0em}
-	\item Stapelverarbeitung (batch processing)
-	\item Dialogbetrieb (time sharing)
-	\item Transaktionsbetrieb (transaction system)
-	\item Echtzeitbetrieb (real time system)
+	\item Stapelverarbeitung (batch processing) - Komplettdefinition vor Start, geschlossene Ausführung
+	\item Dialogbetrieb (time sharing) - Nutzer-Interaktion
+	\item Transaktionsbetrieb (transaction system) - Datenbanken, ACID (Atomarity, consistency, isolation, durability) criterias for data base consistency
+	\item Echtzeitbetrieb (real time system) - hard (keine Überschreitung v. Reaktionszeit) / soft deadlines (m. Toleranzen)
 \end{enumerate}
 
-\marginnote{Welche Faktoren beeinflussen die Entwicklung von BS?}
+\fatmarginnote{3 Betriebsziele}
+Hohe Auslastung, kurze Antwortzeiten, geringer Energieverbrauch 
+
+\fatmarginnote{Welche Faktoren beeinflussen die Entwicklung von BS?}
 \begin{enumerate}
 	\setlength\itemsep{0em}
-	\item Fortschritte der Hrdwaretechnologie (Preis-Leistungs Verhaeltnis)
+	\item Fortschritte der Hardwaretechnologie (Preis-Leistungs Verhaeltnis)
 	\item Dialogbetrieb (time sharing)
-	\item Uebergang von numerischer Berechnung zur allgemeinen Informationsverarbeitung
-	\item Neue Anwendungsbereiche und Oeffnung fuer Nichtspezialisten 
+	\item Übergang von numerischer Berechnung zur allgemeinen Informationsverarbeitung
+	\item Neue Anwendungsbereiche und Oeffnung für Nichtspezialisten 
 \end{enumerate}
 
-\section{Betriebsarten, Zweck und Betriebsziele}
+\subsection{Betriebssystem-Architekturen}
+\fatmarginnote{Monolithisches System}
+Zusammenfassung der Funktionen im BS-Kern. Alle Treiber innehalb des Kerns, Betreten des Kerns durch Systemcalls. BS arbeitet vollständig im Kernel Mode, BS Kern hat hohe Ablaufpriorität, ist permanent im Arbeitsspeicher und besitzt wenig Struktur. 
 
-\section{Betriebssysteme-Generationen}
+\fatmarginnote{Mikrokerne}
+BS in kleineren Modulen, nur Mikrokern läuft im Kernelmode (klein und leicht wartbar). Mikrokern besutzt nur noch Basismechanismen (IPC \& Scheduling). 
 
-\section{Betriebssystem-Architekturen}
+\subsection{Virtual Machines}
+\fatmarginnote{Beschreibung der Funktionalität}
+Ziel: Gleichzeitige Ausführung mehrerer BS isoliert in einer VM auf gleicher Hardware. Virtual Machine Monitor (VMM / Hypervisor) kontrolliert die physikalische HW und stellt virtuelle HW für Gast-BS bereit. 
 
-\section{Virtuelle Maschinen}
+\fatmarginnote{Container}
+Zusätzliche Isolation innerhalb des BS führt zu stärkerer Isolation von Anwendungen - erreicht durch Einschränkungen des sys-call Interfaces und Einführung von Gruppen. Zunehmender Einsatz im Zusammenhang mit Cloud-Plattformen. 
 
-\section{Hardwarenahe Programme}
-\subsection{Linker und Loader}
-\marginnote{Differenziere die Begriffe Linker und Loader}
-\begin{tabularx}{\textwidth}{X X}
-	Linker&			Loader \\
-\end{tabularx}
+\subsection{Hardwarenahe Programme}
+\fatmarginnote{Definition: Maschinenschnittstelle, ISA}
+ISA (Instruction Set Architecture) ist die Menge der Maschinenbefehle (Befehlssatz des Prozessors). Unterscheidung zwischen RISC und CISC-Architekturen. Intel gehört zu CISC Architektur
 
-\marginnote{Nenne Vor- und Nachteile eines statischen Linkers}
+\subsubsection{Assembler}
+Maschinennahe, konkrete Programmiersprache. Vereinfachung der Nutzung der ISA durch Verwendung von Namen und symb. Adressen. 
+\fatmarginnote{Aufgaben eines Assemblers}
+Transformation von Assemblerbefehlen in Maschinenbefehle, Zuweisung von symbolischen Namen zu Maschinenadressen, Erzeugen eines \fatcapitals{Objektprogramms}. Ein Assembler arbeitet nur auf einer Compile-Unit. 
+
+\subsubsection{Linker (Binder) und Loader}
+Was passiert wenn ein Programm aus mehreren Modulen besteht?
+\fatmarginnote{Differenziere die Begriffe Linker und Loader}
+Linker fasst die einzelnen Lade-Objekte (\fatcapitals{Kompilate}) einzelner Compile-units in einer gemeinsamen \textsc{Objektdatei} zusammen. (Ein Assembler arbeitet nur auf einer einzelnen Compile-Unit.) 
+
+Loader fügt die vom Linker erstellten Objekte im Speicher zusammen u. startet die Ausführung. Laden des Programms, der externen Objekte in den Arbeitsspeicher. Auflösung der externen Referenzen. Starten des Programms durch Ausführung der \texttt{main}-Methode. Laden weiterer Libraries während Ausführung möglich. 
+
+\fatmarginnote{Statisches und dynamisches Linken}
+Beim stat. Linken werden alle mdule in eine Executable zusammengefasst. Das Linken wird zur compile time vollständig durchgeführt. Beim dynamischen Linken werden nur einzelne Module (shared libraries) vorher zusammengefasst und erst zur load time gelinkt. 
+
+\fatmarginnote{Nenne Vor- und Nachteile eines statischen Linkers}
+Alle benötigten Routinen sind für die Ausführung in einem Programm vorhanden, schnell und direkt ausführbar. ABER inflexibel, Speicherverschwendung, shared libraries werden individuell kopiert. 
+
 \begin{tabularx}{\textwidth}{X X}
 	Vorteile& Nachteile\\
-	alle benoetigten Routinen sind fuer die Ausfuehrung in einem Programm vorhanden, schnell, direkt ausfuehrbar& inflexibel, Speicherverschwendung, shared libraries werden individuell kopiert\\ 
+	alle benötigten Routinen sind für die Ausführung in einem Programm vorhanden, schnell, direkt ausführbar& inflexibel, Speicherverschwendung, shared libraries werden individüll kopiert\\ 
 \end{tabularx}
