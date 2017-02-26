@@ -1,16 +1,16 @@
-\section{Einfuehrung}
+\section{Einführung}
 
 \subsection{Grundlegende Begriffe}
 \fatmarginnote{Definition: Rechner\-system}
 Sie sind offene, dynamische, technische Systeme mit der Fähigkeit zur Speicherung und Verarbeitung von Informationen, sowie der Fähigkeit zur Kommunikation.
 
-\fatmarginnote{Definition: Offenes System} 
-Ein offenes System besteht aus Komponenten, Verbindungen zwischen diesen beschreiben Abhängigkeiten, besitzt Schnittstellen zur externen Einwirkung auf das System. 
+\fatmarginnote{Definition: Offenes System}
+Ein offenes System besteht aus Komponenten, Verbindungen zwischen diesen beschreiben Abhängigkeiten, besitzt Schnittstellen zur externen Einwirkung auf das System.
 
-\fatmarginnote{Definition: Schnittstellen} 
+\fatmarginnote{Definition: Schnittstellen}
 Schnittstellen ermöglichen verschiedene Sichten auf das System. Black-Box-Sicht auf Einheiten von au"sen durch Zusammenfassung von Komponenten / Abgrenzungen, White-Box-Sicht von innen, die durch rekurs. Aufteilung in Komponenten / Subkomponenten verfeinert werden.
- 
-\fatmarginnote{Definition: Dynamisches System} verändert sich über die Zeit. Zu einem Betrachtungszeitpunkt: Eigenschaften beschreiben Zustand des Systems. Änderungen von Eigenschaften sind Zustands\-änderungen. System\-verhalten beschrieben durch Folge von Zuständen / Zustandsänderungen, ermöglicht durch aktive (Aktionsausführung) und passive Komponenten (Aktionsermöglichung).  
+
+\fatmarginnote{Definition: Dynamisches System} verändert sich über die Zeit. Zu einem Betrachtungszeitpunkt: Eigenschaften beschreiben Zustand des Systems. Änderungen von Eigenschaften sind Zustands\-änderungen. System\-verhalten beschrieben durch Folge von Zuständen / Zustandsänderungen, ermöglicht durch aktive (Aktionsausführung) und passive Komponenten (Aktionsermöglichung).
 
 \marginpar{Schichten\-struktur und Einordnung des Betriebs\-systems}
 \begin{itemize} 	\setlength\itemsep{0em}
@@ -20,11 +20,11 @@ Schnittstellen ermöglichen verschiedene Sichten auf das System. Black-Box-Sicht
 	\item Hardware (Maschinensprache, Prozessor (CPU, GPU), Arbeisspeicher, I/O-Geräte)
 \end{itemize}
 
-\fatmarginnote{Definition: Prozess} 
-Ein Prozess (aktive Einheit) ist ein Programm (passive Einheit) in Ausführung, dabei sind mehrere Prozesse (Instanzen) möglich. Ein System besteht aus einer Menge von Prozessen. Dazu werden Prozesse benötigt (CPU, Speicher, Ein-/Ausgabegeräte, Dateien). Konzeptuell: Jeder Prozess besitzt seine eigene CPU. Ressourcenteilung der CPU wird durch BS realisiert - Prozessorverwaltungsaufgabe. Jeder Prozess besitzt einen eigenen Prozessadressraum - den virtueller Adressraum (Programmcode und Daten), diese sind voneinander abgeschottet.  
+\fatmarginnote{Definition: Prozess}
+Ein Prozess (aktive Einheit) ist ein Programm (passive Einheit) in Ausführung, dabei sind mehrere Prozesse (Instanzen) möglich. Ein System besteht aus einer Menge von Prozessen. Dazu werden Prozesse benötigt (CPU, Speicher, Ein-/Ausgabegeräte, Dateien). Konzeptuell: Jeder Prozess besitzt seine eigene CPU. Ressourcenteilung der CPU wird durch BS realisiert - Prozessorverwaltungsaufgabe. Jeder Prozess besitzt einen eigenen Prozessadressraum - den virtueller Adressraum (Programmcode und Daten), diese sind voneinander abgeschottet.
 
 \fatmarginnote{2 Klassen von Prozessen}
-Sequenzielle Prozesse mit einem Kontrollfluss und einem Befehlszähler, sequentielle Ausführung des Programms. Multi-Threaded Prozesse mit mehreren Kontrollflüssen mit je eigenem BZ, Registern und Stack. 
+Sequenzielle Prozesse mit einem Kontrollfluss und einem Befehlszähler, sequentielle Ausführung des Programms. Multi-Threaded Prozesse mit mehreren Kontrollflüssen mit je eigenem BZ, Registern und Stack.
 
 \subsection{Betriebssysteme: Hauptaufgaben}
 \fatmarginnote{Zwei Hauptaufgaben}
@@ -53,14 +53,14 @@ Sequenzielle Prozesse mit einem Kontrollfluss und einem Befehlszähler, sequenti
 \begin{itemize} \setlength\itemsep{0em}
 	\item Anzahl der Nutzungen
 	\item Parallelität
-	\item Dauerhaftigkeit 
+	\item Dauerhaftigkeit
 	\item Zentrale / Periphere Ressourcen
-	\item aktive / passive Ressourcen, Hardware u. Software Ressourcen 
+	\item aktive / passive Ressourcen, Hardware u. Software Ressourcen
 \end{itemize}
 
 Schutz des BS und der Hardware vor Fehlern und Angriffen
 \fatmarginnote{Welche Lösungs\-ansaetze? Welche Klassifizierung in Arbeitsmodi?}
-Benutzermodus (user mode/space): Kein direkter Hardware Zugriff möglich, Zugriff nur auf virt. Adressen, Anwendungen/Benutzerprogramme \\ Systemmodus (kernel mode)/space: Privilegierter Modus/Befehle, alle Maschinenbefehle verfügb., BS-Kern läuft im kernel mode duh 
+Benutzermodus (user mode/space): Kein direkter Hardware Zugriff möglich, Zugriff nur auf virt. Adressen, Anwendungen/Benutzerprogramme \\ Systemmodus (kernel mode)/space: Privilegierter Modus/Befehle, alle Maschinenbefehle verfügb., BS-Kern läuft im kernel mode duh
 
 
 
@@ -89,7 +89,7 @@ Benutzermodus (user mode/space): Kein direkter Hardware Zugriff möglich, Zugrif
 \end{enumerate}
 
 \fatmarginnote{3 Betriebsziele}
-Hohe Auslastung, kurze Antwortzeiten, geringer Energieverbrauch 
+Hohe Auslastung, kurze Antwortzeiten, geringer Energieverbrauch
 
 \fatmarginnote{Welche Faktoren beeinflussen die Entwicklung von BS?}
 \begin{enumerate}
@@ -97,46 +97,46 @@ Hohe Auslastung, kurze Antwortzeiten, geringer Energieverbrauch
 	\item Fortschritte der Hardwaretechnologie (Preis-Leistungs Verhaeltnis)
 	\item Dialogbetrieb (time sharing)
 	\item Übergang von numerischer Berechnung zur allgemeinen Informationsverarbeitung
-	\item Neue Anwendungsbereiche und Oeffnung für Nichtspezialisten 
+	\item Neue Anwendungsbereiche und Oeffnung für Nichtspezialisten
 \end{enumerate}
 
 \subsection{Betriebssystem-Architekturen}
 \fatmarginnote{Monolithisches System}
-Zusammenfassung der Funktionen im BS-Kern. Alle Treiber innehalb des Kerns, Betreten des Kerns durch Systemcalls. BS arbeitet vollständig im Kernel Mode, BS Kern hat hohe Ablaufpriorität, ist permanent im Arbeitsspeicher und besitzt wenig Struktur. 
+Zusammenfassung der Funktionen im BS-Kern. Alle Treiber innehalb des Kerns, Betreten des Kerns durch Systemcalls. BS arbeitet vollständig im Kernel Mode, BS Kern hat hohe Ablaufpriorität, ist permanent im Arbeitsspeicher und besitzt wenig Struktur.
 
 \fatmarginnote{Mikrokerne}
-BS in kleineren Modulen, nur Mikrokern läuft im Kernelmode (klein und leicht wartbar). Mikrokern besutzt nur noch Basismechanismen (IPC \& Scheduling). 
+BS in kleineren Modulen, nur Mikrokern läuft im Kernelmode (klein und leicht wartbar). Mikrokern besutzt nur noch Basismechanismen (IPC \& Scheduling).
 
 \subsection{Virtual Machines}
 \fatmarginnote{Beschreibung der Funktionalität}
-Ziel: Gleichzeitige Ausführung mehrerer BS isoliert in einer VM auf gleicher Hardware. Virtual Machine Monitor (VMM / Hypervisor) kontrolliert die physikalische HW und stellt virtuelle HW für Gast-BS bereit. 
+Ziel: Gleichzeitige Ausführung mehrerer BS isoliert in einer VM auf gleicher Hardware. Virtual Machine Monitor (VMM / Hypervisor) kontrolliert die physikalische HW und stellt virtuelle HW für Gast-BS bereit.
 
 \fatmarginnote{Container}
-Zusätzliche Isolation innerhalb des BS führt zu stärkerer Isolation von Anwendungen - erreicht durch Einschränkungen des sys-call Interfaces und Einführung von Gruppen. Zunehmender Einsatz im Zusammenhang mit Cloud-Plattformen. 
+Zusätzliche Isolation innerhalb des BS führt zu stärkerer Isolation von Anwendungen - erreicht durch Einschränkungen des sys-call Interfaces und Einführung von Gruppen. Zunehmender Einsatz im Zusammenhang mit Cloud-Plattformen.
 
 \subsection{Hardwarenahe Programme}
 \fatmarginnote{Definition: Maschinenschnittstelle, ISA}
 ISA (Instruction Set Architecture) ist die Menge der Maschinenbefehle (Befehlssatz des Prozessors). Unterscheidung zwischen RISC und CISC-Architekturen. Intel gehört zu CISC Architektur
 
 \subsection{Assembler}
-Maschinennahe, konkrete Programmiersprache. Vereinfachung der Nutzung der ISA durch Verwendung von Namen und symb. Adressen. 
+Maschinennahe, konkrete Programmiersprache. Vereinfachung der Nutzung der ISA durch Verwendung von Namen und symb. Adressen.
 \fatmarginnote{Aufgaben eines Assemblers}
-Transformation von Assemblerbefehlen in Maschinenbefehle, Zuweisung von symbolischen Namen zu Maschinenadressen, Erzeugen eines \fatcapitals{Objektprogramms}. Ein Assembler arbeitet nur auf einer Compile-Unit. 
+Transformation von Assemblerbefehlen in Maschinenbefehle, Zuweisung von symbolischen Namen zu Maschinenadressen, Erzeugen eines \fatcapitals{Objektprogramms}. Ein Assembler arbeitet nur auf einer Compile-Unit.
 
 \subsection{Linker (Binder) und Loader}
 Was passiert wenn ein Programm aus mehreren Modulen besteht?
 \fatmarginnote{Differenziere die Begriffe Linker und Loader}
-Linker fasst die einzelnen Lade-Objekte (\fatcapitals{Kompilate}) einzelner Compile-units in einer gemeinsamen \textsc{Objektdatei} zusammen. (Ein Assembler arbeitet nur auf einer einzelnen Compile-Unit.) 
+Linker fasst die einzelnen Lade-Objekte (\fatcapitals{Kompilate}) einzelner Compile-units in einer gemeinsamen \textsc{Objektdatei} zusammen. (Ein Assembler arbeitet nur auf einer einzelnen Compile-Unit.)
 
-Loader fügt die vom Linker erstellten Objekte im Speicher zusammen u. startet die Ausführung. Laden des Programms, der externen Objekte in den Arbeitsspeicher. Auflösung der externen Referenzen. Starten des Programms durch Ausführung der \texttt{main}-Methode. Laden weiterer Libraries während Ausführung möglich. 
+Loader fügt die vom Linker erstellten Objekte im Speicher zusammen u. startet die Ausführung. Laden des Programms, der externen Objekte in den Arbeitsspeicher. Auflösung der externen Referenzen. Starten des Programms durch Ausführung der \texttt{main}-Methode. Laden weiterer Libraries während Ausführung möglich.
 
 \fatmarginnote{Statisches und dynamisches Linken}
-Beim stat. Linken werden alle mdule in eine Executable zusammengefasst. Das Linken wird zur compile time vollständig durchgeführt. Beim dynamischen Linken werden nur einzelne Module (shared libraries) vorher zusammengefasst und erst zur load time gelinkt. 
+Beim stat. Linken werden alle mdule in eine Executable zusammengefasst. Das Linken wird zur compile time vollständig durchgeführt. Beim dynamischen Linken werden nur einzelne Module (shared libraries) vorher zusammengefasst und erst zur load time gelinkt.
 
 \fatmarginnote{Nenne Vor- und Nachteile eines statischen Linkers}
-Alle benötigten Routinen sind für die Ausführung in einem Programm vorhanden, schnell und direkt ausführbar. ABER inflexibel, Speicherverschwendung, shared libraries werden individuell kopiert. 
+Alle benötigten Routinen sind für die Ausführung in einem Programm vorhanden, schnell und direkt ausführbar. ABER inflexibel, Speicherverschwendung, shared libraries werden individuell kopiert.
 
 \begin{tabularx}{\textwidth}{X X}
 	Vorteile& Nachteile\\
-	alle benötigten Routinen sind für die Ausführung in einem Programm vorhanden, schnell, direkt ausführbar& inflexibel, Speicherverschwendung, shared libraries werden individüll kopiert\\ 
+	alle benötigten Routinen sind für die Ausführung in einem Programm vorhanden, schnell, direkt ausführbar& inflexibel, Speicherverschwendung, shared libraries werden individüll kopiert\\
 \end{tabularx}
